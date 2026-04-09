@@ -1,1 +1,42 @@
-
+#Alarm code 1: Air in line
+{
+  "alarm_code": "AIR_IN_LINE",
+  "alarm_name": "Air-in-Line Alarm",
+  "description": "Air bubbles have been detected in the infusion line, which may pose a safety risk.",
+  "severity": "critical",
+  "possible_causes": [
+    "Air bubbles present in IV tubing",
+    "Improper priming of the infusion line",
+    "Loose or disconnected tubing connections"
+  ],
+  "steps": [
+    {
+      "step_id": 1,
+      "instruction": "Stop the infusion pump immediately",
+      "type": "action"
+    },
+    {
+      "step_id": 2,
+      "instruction": "Inspect the IV tubing for visible air bubbles",
+      "type": "check"
+    },
+    {
+      "step_id": 3,
+      "instruction": "Remove air from the line by priming the tubing according to procedure",
+      "type": "action"
+    },
+    {
+      "step_id": 4,
+      "instruction": "Ensure all tubing connections are secure and properly fitted",
+      "type": "check"
+    },
+    {
+      "step_id": 5,
+      "instruction": "Restart the infusion pump",
+      "type": "action"
+    }
+  ],
+  "expected_outcome": "Air is removed from the line and infusion resumes safely",
+  "escalation": "If air cannot be cleared or the alarm persists, discontinue use and contact technical or clinical support"
+}
+#Alarm Code 2: Occlusion
