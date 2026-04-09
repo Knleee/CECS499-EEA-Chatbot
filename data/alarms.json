@@ -120,3 +120,8 @@
   }
 ]
 
+#"user_states": {
+  "confused": "Provide more detailed guidance and break steps down",
+  "frustrated": "Use shorter, more direct instructions",
+  "confident": "Skip detailed explanations"
+}
