@@ -1,5 +1,6 @@
 #Alarm code 1: Air in line
-{
+[
+  {
   "alarm_code": "AIR_IN_LINE",
   "alarm_name": "Air-in-Line Alarm",
   "description": "Air bubbles have been detected in the infusion line, which may pose a safety risk.",
@@ -38,5 +39,84 @@
   ],
   "expected_outcome": "Air is removed from the line and infusion resumes safely",
   "escalation": "If air cannot be cleared or the alarm persists, discontinue use and contact technical or clinical support"
-}
+  }
 #Alarm Code 2: Occlusion
+  {
+  "alarm_code": "OCCLUSION",
+  "alarm_name": "Occlusion Alarm",
+  "description": "A blockage has been detected in the infusion line preventing fluid flow.",
+  "severity": "high",
+  "possible_causes": [
+    "Kinked or bent tubing",
+    "Closed clamp",
+    "Blocked catheter or IV line",
+    "Obstruction in infusion pathway"
+  ],
+  "steps": [
+    {
+      "step_id": 1,
+      "instruction": "Check the IV tubing for kinks or bends",
+      "type": "check"
+    },
+    {
+      "step_id": 2,
+      "instruction": "Ensure all clamps are open",
+      "type": "check"
+    },
+    {
+      "step_id": 3,
+      "instruction": "Inspect the catheter or IV site for blockage",
+      "type": "check"
+    },
+    {
+      "step_id": 4,
+      "instruction": "Clear any obstruction found in the tubing or line",
+      "type": "action"
+    },
+    {
+      "step_id": 5,
+      "instruction": "Restart the infusion pump",
+      "type": "action"
+    }
+  ],
+  "expected_outcome": "Fluid flow is restored and alarm is cleared",
+  "escalation": "If occlusion persists after all checks, stop the pump and contact technical support"
+  }
+#Alarm code 3: Battery empty alarm
+  {
+  "alarm_code": "BATTERY_EMPTY",
+  "alarm_name": "Battery Empty Alarm",
+  "description": "The battery level is critically low and the device cannot continue operation without power.",
+  "severity": "critical",
+  "possible_causes": [
+    "Battery fully discharged",
+    "Device not connected to power source",
+    "Battery failure or degradation"
+  ],
+  "steps": [
+    {
+      "step_id": 1,
+      "instruction": "Connect the infusion pump to a power source immediately",
+      "type": "action"
+    },
+    {
+      "step_id": 2,
+      "instruction": "Verify that the charging indicator is active",
+      "type": "check"
+    },
+    {
+      "step_id": 3,
+      "instruction": "Allow the device to charge before resuming operation",
+      "type": "action"
+    },
+    {
+      "step_id": 4,
+      "instruction": "Restart the infusion pump once sufficient power is restored",
+      "type": "action"
+    }
+  ],
+  "expected_outcome": "Device regains power and resumes normal operation",
+  "escalation": "If the device does not charge or power on, replace the battery or contact technical support"
+  }
+]
+
